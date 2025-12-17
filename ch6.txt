@@ -1,0 +1,5 @@
+Challenge ID: CH6
+Target URL: http://172.16.13.89:9005
+Finding Summary: IDOR vulnerability allowing access to other users’ data
+Detection Method: Custom Nuclei template accessing unauthorized user ID
+Template File: ch6.yaml

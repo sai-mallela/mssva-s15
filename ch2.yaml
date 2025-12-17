@@ -1,0 +1,22 @@
+id: ch2-arbitrary-file-download
+
+info:
+  name: Arbitrary File Download
+  author: sai-mallela
+  severity: high
+  description: Application allows downloading files via user-controlled parameter
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/download?file=test.txt"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - "test"

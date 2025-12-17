@@ -1,0 +1,23 @@
+id: ch7-sensitive-data-exposure
+
+info:
+  name: Sensitive Data Exposure
+  author: sai-mallela
+  severity: high
+  description: API endpoint exposes sensitive user information without authentication
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/profile"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "password"

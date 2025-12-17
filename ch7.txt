@@ -1,0 +1,5 @@
+Challenge ID: CH7
+Target URL: http://172.16.13.89:9021
+Finding Summary: Sensitive user information exposed via public API endpoint
+Detection Method: Custom Nuclei template matching sensitive fields in response
+Template File: ch7.yaml

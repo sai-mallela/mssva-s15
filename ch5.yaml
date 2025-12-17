@@ -1,0 +1,32 @@
+id: ch5-hardcoded-credentials
+
+info:
+  name: Hardcoded Credentials Login
+  author: sai-mallela
+  severity: high
+  description: Application allows login using hardcoded admin credentials
+
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}/admin/login"
+
+    headers:
+      Content-Type: application/json
+
+    body: |
+      {
+        "username": "admin",
+        "password": "admin"
+      }
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "welcome admin"

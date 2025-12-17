@@ -1,0 +1,26 @@
+id: ch6-idor-user-data
+
+info:
+  name: IDOR – User Data Exposure
+  author: sai-mallela
+  severity: high
+  description: User data exposed by changing object ID without authorization
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/user/2"
+
+    headers:
+      Authorization: testtoken
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "admin"

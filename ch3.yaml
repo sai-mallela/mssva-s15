@@ -1,0 +1,26 @@
+id: ch3-auth-header-bypass
+
+info:
+  name: Authorization Header Bypass
+  author: sai-mallela
+  severity: high
+  description: API returns order data when any Authorization header is provided
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/orders/1"
+
+    headers:
+      Authorization: test
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "laptop"

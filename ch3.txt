@@ -1,0 +1,5 @@
+Challenge ID: CH3
+Target URL: http://127.0.0.1:8003
+Finding Summary: Authorization bypass due to missing token validation
+Detection Method: Custom Nuclei template with fake Authorization header
+Template File: ch3.yaml

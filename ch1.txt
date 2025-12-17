@@ -1,0 +1,8 @@
+
+
+
+Challenge ID: CH1
+Target URL: http://127.0.0.1:8001
+Finding Summary: Admin configuration endpoint exposed without authentication
+Detection Method: Custom Nuclei template using HTTP GET request and response matching
+Template File: ch1.yaml

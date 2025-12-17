@@ -1,0 +1,5 @@
+Challenge ID: CH2
+Target URL: http://172.16.13.89:8002 
+Finding Summary: Arbitrary file download via user-controlled parameter
+Detection Method: Custom Nuclei template using crafted GET request
+Template File: ch2.yaml

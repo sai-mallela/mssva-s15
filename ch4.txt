@@ -1,0 +1,5 @@
+Challenge ID: CH4
+Target URL: http://127.0.0.1:9020
+Finding Summary: Application leaks Python debug stack trace on runtime error
+Detection Method: Custom Nuclei template triggering division-by-zero error
+Template File: ch4.yaml

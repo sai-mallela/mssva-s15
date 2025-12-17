@@ -1,0 +1,24 @@
+id: ch4-debug-info-disclosure
+
+info:
+  name: Debug Information Disclosure
+  author: sai-mallela
+  severity: medium
+  description: Application exposes Python stack trace and debug information on error
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/calculate?a=10&b=0"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 500
+
+      - type: word
+        part: body
+        words:
+          - "Traceback"
+          - "ZeroDivisionError"

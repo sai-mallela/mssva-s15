@@ -1,0 +1,5 @@
+Challenge ID: CH5
+Target URL: http://172.16.13.89:9004
+Finding Summary: Application uses hardcoded admin credentials
+Detection Method: Custom Nuclei template sending default credentials
+Template File: ch5.yaml
